@@ -37,7 +37,7 @@ render(){
      placeholder="Title"
      name="title"
      className="form-control"
-     onChange={this.onChange}
+     onChange={this.handleInputChange}
      value={this.state.title}/>
     </div>
     <div className="form-group">
@@ -47,7 +47,7 @@ render(){
         placeholder="Body"
         name="body"
         className="form-control"
-        onChange={this.onChange}
+        onChange={this.handleInputChange}
         value={this.state.body}
         />
     </div>
