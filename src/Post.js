@@ -1,19 +1,20 @@
-import React from 'redux';
-const styles={
-    borderBotton: '2px solid #eee',
+import React from 'react';
+
+const styles = {
+    borderBottom: '2px solid #eee',
     background: '#fafafa',
-    margin:'0.75rem auto',
-padding:'0.6rem 1rem',
-maxWidth:'800px',
-borderRadius:'7px'
+    margin: '0.75rem auto',
+    padding: '0.6rem 1rem',
+    maxWidth: '500px',
+    borederRadius: '7px'
 };
 
-export default ({post:{title,body,id},onDelete })=> {
- return(
-   <div style ={styles}>
-        <h2> {title}</h2>
-        <p>{body}</p>
-        <button className="btn dtn-danger" type="button" oncClick={() =>onDelete(id)}>Remove</button>
-   </div>  
- );
+export default ({ post: { title, body, id }, onDelete }) => {
+    return (
+        <div style={styles}>
+            <h2> {title}  </h2>
+            <p> {body} </p>
+            <button className="button is-primary is-rounded" type="button" onClick={() => onDelete(id)}>Remove</button>
+        </div>
+    );
 };

@@ -1,27 +1,29 @@
-import React from 'redux';
-import {connect} from 'react-redux';
-import Post from './Post';
-import {deletePost} from '../actions';
+import React from 'react';
+import { connect } from 'react-redux';
+import Post from '../Post';
+import { deletePost } from '../actions';
 
-function PostList({post,onDelete}){
-    return(
+function PostList({ posts, onDelete }) {
+    console.log(posts);
+    return (
         <div>
             {
-                posts.map(post=>{(<Post post={post} onDelete={onDelete} key={post.id}  />);})
+                posts.map(post => { return (<Post post={post} onDelete={onDelete} key={post.id} />); })
             }
         </div>
     );
 }
 
-const mapStateToProps=state => {
-    return{
-        posts:state.posts
-        }
+const mapStateToProps = state => {
+    return {
+        posts : state.posts
     }
-const mapDispatchToProps=dispath=>{
-    return{
-        onDelete:id=>{
-            dispath(deletePost(id));
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onDelete: id => {
+            dispatch(deletePost(id));
         }
     };
 };
@@ -29,4 +31,4 @@ const mapDispatchToProps=dispath=>{
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(PostList);
+)(PostList)

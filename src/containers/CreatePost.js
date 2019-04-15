@@ -1,10 +1,10 @@
-import {connect} from 'redux';
-import {vreatePost} from '../actions';
+import { connect } from 'react-redux';
+import { createPost } from '../actions';
 import NewPost from '../NewPost';
 
-const mapDispatchToProps=dispatch=>{
+const mapDispatchToProps = dispatch => {
     return {
-        onAddPost: post=>{dsipatch(createPost(post))}
+        onAddPost: post => { dispatch( createPost(post))}
     };
 }
 
